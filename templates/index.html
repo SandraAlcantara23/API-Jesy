@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hill Climbing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ruta Óptima</h1>
+        <p>Haz clic para calcular la mejor ruta entre ciudades mexicanas usando Hill Climbing.</p>
+        <button onclick="obtenerRuta()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function obtenerRuta() {
+            fetch('/mejor_ruta')
+                .then(response => response.json())
+                .then(data => {
+                    const ruta = data.mejor_ruta.join(" → ");
+                    const distancia = data.distancia_total.toFixed(6);
+                    document.getElementById("resultado").innerHTML = `
+                        <h2>Mejor Ruta:</h2>
+                        <p>${ruta}</p>
+                        <h3>Distancia Total:</h3>
+                        <p>${distancia} unidades</p>
+                    `;
+                })
+                .catch(error => {
+                    document.getElementById("resultado").innerHTML = "<p class='error'>Error al obtener los datos.</p>";
+                });
+        }
+    </script>
+</body>
+</html>

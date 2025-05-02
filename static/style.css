@@ -1,0 +1,43 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:  white
+    ;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    background:  #f8bbd0 ;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #66FF99;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #66FF99;
+}
+
+#resultado {
+    margin-top: 30px;
+    text-align: italic;
+}
+
+.error {
+    color: red;
+}
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado TSP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Ruta</h2>
+        <ol>
+            {% for ciudad in ruta %}
+                <li>{{ ciudad }}</li>
+            {% endfor %}
+        </ol>
+        <p>Distancia Total: <strong>{{ distancia }}</strong> unidades</p>
+        <a href="/">Volver a elegir ciudades</a>
+    </div>
+</body>
+</html>
